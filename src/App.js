@@ -11,16 +11,16 @@ function App() {
           const resp = await provider.connect();
           setWalletAddress(resp.publicKey.toString());
         } catch (err) {
-          console.error("Connexion refusée", err);
+          console.error("Connection refused", err);
         }
       }
     } else {
-      alert('Installe Phantom Wallet depuis https://phantom.app');
+      alert('Install Phantom Wallet from https://phantom.app');
     }
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1>Token Launcher</h1>
 
       <button
@@ -31,15 +31,15 @@ function App() {
           color: 'white',
           border: 'none',
           borderRadius: '8px',
-          cursor: 'pointer'
+          cursor: 'pointer',
         }}
       >
-        Se connecter avec Phantom
+        Connect with Phantom
       </button>
 
       {walletAddress && (
         <p style={{ marginTop: '1rem' }}>
-          Connecté : {walletAddress}
+          Connected: {walletAddress}
         </p>
       )}
     </div>
